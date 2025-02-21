@@ -43,7 +43,7 @@ const Header = () => {
   };
   const usePathName = usePathname();
 
-  
+
   return (
     <>
       <header
@@ -178,7 +178,7 @@ const Header = () => {
             onMouseEnter={() => setShowOptions(true)}
             
           >
-            Sign Up
+            Sign Up Me
           </button>
                     </div>
         
