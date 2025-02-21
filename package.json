@@ -11,10 +11,12 @@
   "dependencies": {
     "eslint": "^8.56.0",
     "eslint-config-next": "15.1.6",
+    "jquery": "^3.7.1",
     "next": "15.1.6",
     "next-themes": "^0.2.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-hook-form": "^7.54.2",
     "react-modal-video": "^2.0.1"
   },
   "devDependencies": {
@@ -26,5 +28,9 @@
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
-  }
+  },
+  "description": "Startup free, open-source, and premium-quality startup website template for Next.js comes with everything you need to launch a startup, business, or SaaS website, including all essential sections, components, and pages.",
+  "main": "next.config.js",
+  "author": "",
+  "license": "ISC"
 }

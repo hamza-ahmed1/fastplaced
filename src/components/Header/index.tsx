@@ -9,6 +9,7 @@ import menuData from "./menuData";
 const Header = () => {
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
   const navbarToggleHandler = () => {
     setNavbarOpen(!navbarOpen);
   };
@@ -28,6 +29,7 @@ const Header = () => {
 
   // submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
+  
   const handleSubmenu = (index) => {
     if (openIndex === index) {
       setOpenIndex(-1);
@@ -35,7 +37,10 @@ const Header = () => {
       setOpenIndex(index);
     }
   };
-
+  const handleOptionClick = (role) => {
+    // Redirect to the signup page with the selected role
+    window.location.href = `/signup?role=${role}`;
+  };
   const usePathName = usePathname();
 
   return (
@@ -165,12 +170,39 @@ const Header = () => {
                 >
                   Sign In
                 </Link>
-                <Link
-                  href="/signup"
-                  className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Sign Up
-                </Link>
+       
+                    <div>
+                    <button
+            className="ease-in-up shadow-btn hover:shadow-btn-hover rounded-sm bg-primary px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90"
+            onMouseEnter={() => setShowOptions(true)}
+            
+          >
+            Sign Up
+          </button>
+                    </div>
+        
+
+          {showOptions && (
+            <div className="absolute mt-2 bg-white border rounded-md shadow-lg"
+            onMouseLeave={() => setShowOptions(false)}
+            >
+              <button
+                className="block px-4 py-2 text-left text-gray-700 hover:bg-gray-200 w-full"
+                onClick={() => handleOptionClick('mentor')}
+                
+              >
+                Mentor
+              </button>
+              <button
+                className="block px-4 py-2 text-left text-gray-700 hover:bg-gray-200 w-full"
+                onClick={() => handleOptionClick('mentee')}
+              >
+                Mentee
+              </button>
+              
+            </div>
+            )}
+            
                 <div>
                   <ThemeToggler />
                 </div>

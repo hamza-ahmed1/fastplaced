@@ -31,3 +31,10 @@
     @apply opacity-100;
   }
 }
+
+
+.error-message{
+  padding-top: 3px;
+  font-size: small;
+  color: red;
+}
